@@ -1,0 +1,8 @@
+---
+# Prepare bastion host
+
+- name: Provision bastion
+  hosts: bastion
+  become: true
+  roles:
+    - {name: opentelekomcloud.server_common, enable_ssh_tcp_forwarding: True}
