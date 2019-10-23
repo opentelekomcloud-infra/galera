@@ -1,0 +1,11 @@
+---
+
+- import_playbook: flush_jumphost_key.yaml
+
+- name: install software
+  hosts: galera
+  vars:
+    bootstrap_new_cluster: False
+  roles:
+    - opentelekomcloud.server_common
+    - galera

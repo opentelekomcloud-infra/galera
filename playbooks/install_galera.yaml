@@ -1,0 +1,23 @@
+---
+- name: install software
+  hosts: galera
+  roles:
+    - opentelekomcloud.server_common
+    - galera
+
+- name: init cluster
+  hosts: galera
+  run_once: true
+  tasks:
+    #     - include_role:
+    #         name: galera
+    #         tasks_from: init_cluster.yaml
+
+- name: start cluster
+  hosts: galera
+  become: yes
+  tasks:
+    - systemd:
+        service: mariadb
+        state: started
+        enabled: yes

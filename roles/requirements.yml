@@ -1,0 +1,4 @@
+---
+- name: opentelekomcloud_infra.galera
+  src: https://github.com/opentelekomcloud-infra/ansible-role-galera.git
+  version: master

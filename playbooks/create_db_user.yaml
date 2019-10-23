@@ -1,0 +1,23 @@
+---
+# Create user on the Galera cluster
+# Vars:
+#
+# mysql_root_password
+# galera_db_name
+# galera_user_name
+# galera_user_password
+
+- import_playbook: flush_jumphost_key.yaml
+
+- name: Provision
+  hosts: galera
+  run_once: True
+  tasks:
+    - name: Create DB User
+      mysql_user:
+        login_user: root
+        login_password: "{{ mysql_root_password }}"
+        user: "{{ galera_user_name }}"
+        password: "{{ galera_user_password }}"
+        host_all: yes
+        priv: "{{ galera_db_name }}.*:ALL"

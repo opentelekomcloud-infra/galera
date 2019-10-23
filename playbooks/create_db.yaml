@@ -1,0 +1,19 @@
+---
+# Create DB on the Galera cluster
+# Vars:
+#
+# mysql_root_password
+# galera_db_name
+
+- import_playbook: flush_jumphost_key.yaml
+
+- name: Provision
+  hosts: galera
+  run_once: True
+  tasks:
+    - name: Creates DB
+      mysql_db:
+        login_user: root
+        login_password: "{{ mysql_root_password }}"
+        db: "{{ galera_db_name }}"
+
