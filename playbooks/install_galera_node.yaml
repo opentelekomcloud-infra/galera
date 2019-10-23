@@ -8,4 +8,4 @@
     bootstrap_new_cluster: False
   roles:
     - opentelekomcloud.server_common
-    - galera
+    - opentelekomcloud_infra.galera

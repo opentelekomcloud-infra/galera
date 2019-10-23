@@ -3,15 +3,7 @@
   hosts: galera
   roles:
     - opentelekomcloud.server_common
-    - galera
-
-- name: init cluster
-  hosts: galera
-  run_once: true
-  tasks:
-    #     - include_role:
-    #         name: galera
-    #         tasks_from: init_cluster.yaml
+    - opentelekomcloud_infra.galera
 
 - name: start cluster
   hosts: galera
