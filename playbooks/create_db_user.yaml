@@ -20,3 +20,12 @@
         user: "{{ galera_user_name }}"
         password: "{{ galera_user_password }}"
         priv: "{{ galera_db_name }}.*:ALL"
+
+    - name: Create DB User - remote
+      mysql_user:
+        login_user: root
+        login_password: "{{ mysql_root_password }}"
+        user: "{{ galera_user_name }}"
+        password: "{{ galera_user_password }}"
+        priv: "{{ galera_db_name }}.*:ALL"
+        host: "%"
