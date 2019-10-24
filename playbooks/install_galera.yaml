@@ -1,4 +1,7 @@
 ---
+# Bootstrap a new Galera cluster
+- import_playbook: flush_jumphost_key.yaml
+
 - name: install software
   hosts: galera
   roles:

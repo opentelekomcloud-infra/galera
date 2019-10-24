@@ -1,5 +1,5 @@
 ---
-
+# Add a new node to the existing cluster
 - import_playbook: flush_jumphost_key.yaml
 
 - name: install software
