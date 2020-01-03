@@ -2,4 +2,6 @@
 - name: opentelekomcloud_infra.galera
   src: https://github.com/opentelekomcloud-infra/ansible-role-galera.git
   version: master
+- name: opentelekomcloud_infra.zookeeper
+  src: https://github.com/opentelekomcloud-infra/ansible-role-zookeeper.git
 - name: opentelekomcloud.server_common

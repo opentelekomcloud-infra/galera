@@ -1,0 +1,10 @@
+---
+# Bootstrap a new Zookeeper cluster
+- import_playbook: flush_jumphost_key.yaml
+
+- name: install software
+  hosts: zookeeper
+  roles:
+    - opentelekomcloud.server_common
+    - opentelekomcloud_infra.zookeeper
+
