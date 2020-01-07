@@ -1,0 +1,10 @@
+---
+# Bootstrap a new Postgres (Patroni) cluster
+- import_playbook: flush_jumphost_key.yaml
+
+- name: install software
+  hosts: postgres
+  roles:
+    - opentelekomcloud.server_common
+    - opentelekomcloud_infra.postgres_cluster
+
